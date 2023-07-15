@@ -9,6 +9,8 @@ import Error from "./components/Error";
 import Contact from "./components/Contact";
 import Profile from "./components/Profile";
 import RestaurantMenu from "./components/RestaurantMenu";
+import { Provider } from "react-redux";
+import store from "./utils/store";
 
 // import Instamart from "./components/Instamart";
 const Instamart=lazy(()=>import("./components/Instamart"));
@@ -18,11 +20,13 @@ const Instamart=lazy(()=>import("./components/Instamart"));
 
 const AppLayout=()=>{
     return (
-         <>
+         <Provider store={store}>
+
          <Header/>
          <Outlet/>
          <Footer/>
-         </>
+
+         </Provider>
     );
 };
 
